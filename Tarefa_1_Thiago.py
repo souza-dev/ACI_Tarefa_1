@@ -19,8 +19,8 @@ def main(argv):
     def convertToSameResolution(img1, img2):
         temp1 = np.copy(img1)
         temp2 = np.copy(img2)
-        heigth = np.min([temp1.shape[0], temp2.shape[1]])
-        width = np.min([temp1.shape[0], temp2.shape[1]])
+        heigth = np.min([temp1.shape[0], temp2.shape[0]])
+        width = np.min([temp1.shape[1], temp2.shape[1]])
         temp1 = cv.resize(temp1, (width, heigth))
         temp2 = cv.resize(temp2, (width, heigth))
         return (temp1, temp2)
